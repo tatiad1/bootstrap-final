@@ -1,0 +1,149 @@
+/* ? title_section START */
+.title_section .section_title{
+    font-size: 7vh;
+    font-family: var(--straight_curvy_font);
+    letter-spacing: 0.2vh;
+}
+
+@media (min-width:1190px){
+    .title_section .section_title{
+        width: 45%;
+        font-size: 8vh;
+    }
+}
+/* ? title_section END */
+
+
+
+/* ? background_img_section START */
+.background_img_section .container-fluid{
+    background-image: url(../img/about-us-img.jpg);
+    background-size: cover;
+    height: 90vh;
+    background-position: center;
+}
+/* ? background_img_section END */
+
+
+
+/* ?  good_base SECTION START */
+@media (max-width:990px){
+    .good_base_text{
+        padding: 0 4vh 0 15vh;
+    }
+}
+
+.good_base .col-lg-4 #img_title{
+    font-size: 3vh;
+    letter-spacing: 0.2vh;
+    font-family: var(--straight_curvy_font);
+}
+
+.img_text{
+    color: var(--medium-dark-green);
+    font-size: 2.3vh;
+    font-weight: 400;
+} 
+
+.good_base .moving_img{
+    width:46vh;
+    height: 60vh;
+}
+
+.good_base .view_more_container{
+    font-family: var(--italic_curvy_font);
+    color: var(--medium-dark-green);
+    font-weight: 600;
+}
+
+.good_base .view_icon{
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease-in;
+}
+
+.good_base .view_more_container:hover .view_icon{
+    opacity: 1;
+    visibility: visible;
+}
+
+.good_base .view_icon_1{
+    left: 25vh;
+}
+.good_base .view_more_container:hover .view_icon_1 {
+    left: 26vh; 
+}
+
+.good_base .view_icon_2{
+    left: 27vh;
+}
+.good_base .view_more_container:hover .view_icon_2{
+    left: 28vh; 
+}
+
+.good_base .view_icon_3{
+    left: 16vh;
+}
+.good_base .view_more_container:hover .view_icon_3 {
+    left: 17vh; 
+}
+
+.good_base .view_icon_4{
+    left: 25vh;
+}
+.good_base .view_more_container:hover .view_icon_4{
+    left: 26vh; 
+}
+
+.good_base .view_icon_5{
+    left: 27vh;
+}
+.good_base .view_more_container:hover .view_icon_5{
+    left: 28vh; 
+}
+
+.good_base .product_1{
+    background-image: url(../img/h1-workshop-list-img.jpg);
+}
+.good_base .product_2{
+    background-image: url(../img/h1-workshop-list-img-2.jpg);
+}
+/* ?  good_base SECTION END */
+
+
+
+/* ?stonamade_unique section START */
+.stonemade_unique .col-12{
+    background-image: url(../img/h2-img-2.jpg);
+}
+
+.stonemade_unique .circle_background_img{
+    background-image: url(../img/h2-img-1.png);
+    width: 30.7vh;
+    height: 41.7vh;  
+}
+
+.stonemade_unique .stonemade_unique_img{
+    background-image: url(../img/download.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+@media (max-width: 1190px){
+    .stonemade_unique .stonemade_unique_img{
+        height: 60vh;
+    }
+}
+/* ?stonamade_unique section END */
+
+
+
+/* ? stonamade_process section START */
+@media (max-width: 770px){
+    #stonemade_process .section_title, #stonemade_process .section_title_italic{
+        font-size: 6vh;
+    }
+}
+/* ? stonamade_process section END */
+
+

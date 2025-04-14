@@ -1,0 +1,42 @@
+.our_team .img_text{
+    color: var(--medium-dark-green);
+    font-size: 2.3vh;
+    font-weight: 400;
+} 
+
+.our_team .moving_img{
+    width: 40vh;
+    height: 55vh;
+}
+
+.our_team .member_1{
+    background-image: url(../img/team-new-img-2.jpg);
+}
+.our_team .member_2{
+    background-image: url(../img/Team-2.jpg);
+}
+.our_team .member_3{
+    background-image: url(../img/team-new-img-1.jpg);
+}
+.our_team .member_4{
+    background-image: url(../img/Team-4.jpg);
+}
+
+.img_hover_sites{
+    position: relative;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+}
+
+.our_team .col-12:hover .img_hover_sites{
+    opacity: 1;
+} 
+
+.img_hover_sites a{
+    color: var(--light-green);
+}
+
+.img_hover_sites a:hover{
+    color: var(--dark-green);
+} 
+

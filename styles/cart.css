@@ -1,0 +1,39 @@
+body, a{
+    color: var(--medium-dark-green);
+}
+
+.cart{
+    font-family: var(--italic_curvy_font);
+}
+
+.return_to{
+    margin-bottom: 17vh;
+}
+
+.return_to  span{
+    background-color: var(--dark-green);
+    color: var(--white);
+    font-family: var(--italic_curvy_font);
+    border: none;
+    position: relative;
+}
+
+.return_to span::before{
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0.1vh;
+    background-color: var(--white);
+    left: 15%;
+    bottom: 1.5vh;
+    transition: width 0.3s ease;
+}
+
+.return_to span:hover::before{
+    width: 70%;
+}
+
+.section_title{
+    font-size: 5vh;
+    font-weight: 400;
+}

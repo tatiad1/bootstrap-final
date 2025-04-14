@@ -1,0 +1,1021 @@
+@import url(./config.css);
+
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+/*? NAVBAR START */
+.navbar {
+    position: absolute; 
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1050;
+    display: block;
+    background-color: transparent; 
+}
+
+.navbar-brand img{
+    width: 50%;
+}
+
+.hamburger_cart{
+    padding-right: 0;
+}
+
+.dropdown-toggle::after {
+    display: none;
+ }/* REMOVING DROPDOWN ICON   */
+
+.offcanvas_icon{
+    position: fixed; 
+    top: 2.2vh;
+    right: 4.4vh;
+    z-index: 1050;
+    font-size: 3.3vh;
+ }/* ADDING X ICON   */
+
+
+@media (min-width:1190px) {
+    .secondd_navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: var(--white);
+        color: var(--dark-green);
+        text-align: center;
+        display: none; /* Initially hidden */
+        z-index: 1000;
+    }
+
+    .secondd_navbar .border-hover .nav-link{
+        color: var(--dark-green);
+    }
+    
+    .secondd_navbar .border-hover .nav-link::before {
+        background-color: var(--dark-green);
+    }
+    
+    .secondd_navbar .border-hover .always-border span {
+        border-bottom: 1px solid var(--dark-green); 
+    }
+
+    .secondd_navbar .nav-link{
+        color: var(--dark-green);
+    }
+}
+
+@media (max-width:1190px){
+     .dropdown-submenu .dropdown-item:hover{
+        color: var(--dark-green);
+    }
+
+    .hamburger_cart{
+        color: var(--dark-green); 
+        margin-top: 2.2vh;
+    }
+
+    .hamburger_home{
+        margin-top: 18vh;
+    }
+
+
+    /* *გვერდიდან რომ გამოდიდოეს ჰამბურგერი */
+    .navbar-collapse {
+        position: fixed;
+        top: 0;
+        right: -100%; 
+        height: 100%;
+        width: 34%; 
+        background-color: #f1f3f1;
+        transition: right 0.3s ease;
+        overflow-y: auto;
+    }
+    .navbar-collapse.show {
+        right: 0; 
+    }
+
+
+    .navbar-collapse .nav-item .nav-link{
+        color: var(--dark-green);
+        padding:0  1.7rem ;  
+    }
+
+    .navbar-collapse .nav-item  .dropdown-menu{
+        border-radius: 0;
+        background-color: transparent;
+        border: none;  
+        padding: 0;
+        padding-left: 1rem;
+    } 
+}
+
+@media (min-width: 1190px) { 
+    .navbar-collapse {
+        margin-left: -2.03rem; 
+    }
+
+    /* * border hover navbar (MAIN NAVBAR) */
+    .border-hover .nav-link::before {
+        content: "";
+        position: absolute;
+        bottom: 0.5rem;
+        left: 0;
+        width: 0;
+        height: 1px;
+        background-color: var(--white-beige);
+        transition: all 0.6s ease;
+    }
+
+    .border-hover .nav-link:hover::before {
+        width: 100%;
+    }
+
+    .border-hover .always-border span {
+        border-bottom: 1px solid var(--white-beige); 
+        padding-bottom: 0.1rem;
+    }
+    
+    .border-hover .always-border::before {
+        content: none;
+        transition: none; 
+    }
+
+
+    /* * ცარიელი სივრცე nav-item_სა და dropdown_menu შორის  (MAINN)*/
+    .nav-item {
+        position: relative; /* Ensures dropdown-menu is positioned relative to nav-item */
+    }
+    
+    .nav-item::before {
+        content: "";
+        position: absolute;
+        top: 100%; /* Immediately below the nav-link */
+        left: 0;
+        width: 100%;
+        height: 2.2rem; /* Matches the gap height */
+        background: transparent; /* Invisible buffer */
+        z-index: 1; /* Stays above other elements */
+    }
+
+    .nav-item .dropdown-menu {
+        display: none;
+        position: absolute; 
+        top: calc(100% + 2.2rem); 
+        left: 0;
+        z-index: 1050; 
+    }
+
+
+    /* * ჰოვერზე გამოდიოდეს მხოლოდ lgზე */
+    .nav-item:hover .dropdown-menu {
+        display: block; 
+        border-radius: 0;
+        background-color: #f1f3f1;
+        border: 0.3px solid #e4e4e4;  
+    }
+
+    .nav-item.active .dropdown-menu {
+        display: none; 
+    }
+
+
+    /* Show the dropdown on hover */
+    .nav-item.dropdown:hover .section-dropdown {
+        max-height: 500px;           
+        visibility: visible;         
+        opacity: 1; 
+    }
+
+    .section-dropdown {
+        transform: translateX(-12rem);   
+    }
+
+    .section-dropdown  ul li:first-child a{
+        padding-bottom: 1rem;
+    }
+
+
+    /* ! MINI DROPDWONS */
+    .dropdown-submenu {
+        position: relative; 
+    }
+
+    .dropdown-submenu .dropdown-menu {
+        position: absolute;
+        top: 0;
+        left: 100%; 
+        visibility: hidden;  
+    }
+
+    /* Show the submenu when hovering */
+    .dropdown-submenu:hover .dropdown-menu {
+        visibility: visible;
+        left: 100%;  
+    }
+
+}
+
+
+.section-dropdown {
+    max-height: 0;                /* Start with zero height */
+    overflow: hidden;            /* Prevent content overflow */
+    visibility: hidden;          /* Make it invisible */
+    opacity: 0;                  /* Fully transparent */
+    transition: all 0.5s ease-in;
+}
+
+.section-dropdown ul{
+    list-style: none; 
+}
+
+.section-dropdown  ul li:first-child a{
+    letter-spacing: 4.3px;
+    font-family: var(--straight_strict_font);
+    font-size:12px;
+    font-weight: 500;
+}
+
+.section-dropdown ul li:first-child a:hover{
+    color: var(--dark-green);
+}
+
+.section-dropdown  ul .dropdown-item{
+    padding: 0;
+    padding-bottom: 0.5rem;
+}
+
+.dropdown-menu .dropdown-item{
+    color: #17403C;
+    font-family:var(--italic_curvy_font);
+    font-weight: 600;
+    padding-right: 7rem;
+    padding-left: 1.5rem;
+}
+
+.dropdown-menu .dropdown-item:hover{
+    color: var(--light-green);
+    background-color: transparent;
+}
+
+.hamburger_cart, .workshops_navbar,  .border-hover .nav-link  {
+    color: var(--white-beige); 
+    letter-spacing: 4.3px;
+    font-family: var(--straight_strict_font);
+    font-size:smaller;
+    font-weight: 500;
+    position: relative;
+    border-bottom: 1px solid transparent;
+}
+
+.workshops_navbar{
+    color: var(--dark-green); 
+    border-bottom: 1px solid var(--dark-green); 
+}
+
+
+/* ! FOR EVERY SECTION START*/
+.moving_img{
+    position: relative;
+    background-image:url(../img/wide-dd-img-398x254.jpg);
+    background-size: cover;
+    background-position:right center;
+    width: 18.75rem;
+    height: 12.5rem;
+    overflow: hidden; 
+    transition: background-position 0.3s ease-in-out; /* Transition for smooth effect */
+}
+
+.moving_img:hover {
+    background-position:left center ; /* Adjust this value to your liking */
+}
+
+.moving_img img{
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 2;  
+}
+
+.add_to_cart {
+    position: absolute;
+    bottom: -3rem; 
+    left: 0;
+    width: 100%; 
+    text-align: center;
+    background-color: #e4e4e4;
+    color: var(--dark-green);
+    padding: 0.5rem 0; 
+    letter-spacing: normal;
+    font-size: 1rem;  
+    font-family:var(--italic_curvy_font);
+    transition: bottom 0.3s ease-in;
+    border-bottom: 1px solid transparent;
+}
+
+.moving_img:hover .add_to_cart {
+    bottom: 0;
+}
+
+.add_to_cart::after{
+    content: "";
+    position: absolute;
+    bottom: 0.7rem;
+    left: 37.5%;
+    width: 0;
+    height: 1px;
+    background-color:var(--dark-green);
+    transition: all 1s ease;
+}
+
+.add_to_cart:hover::after{
+    width: 25%;
+}
+
+#img_title{
+    color: var(--medium-dark-green);
+    letter-spacing: 4.3px;
+    font-family: var(--straight_strict_font);
+    font-size:medium;
+    font-weight: 500;
+    padding: 0;
+}
+
+#img_title:hover{
+    color: var(--medium-dark-green);
+}
+/* ! FOR EVERY SECTION END*/
+/*? NAVBAR END */
+
+
+
+/* ? CAROUSEL SECTION START */
+.carousel_section{
+    background-color: var(--beige);
+}
+
+@media (min-width:1190px) {
+    .carousel_medium_1{
+        transform: translate(15.3vh, 16.5vh);
+    }
+      
+    .carousel_medium_2{
+        transform: translate(12.1vh, 39.16vh);
+    }
+}
+
+@media (max-width: 576px){
+    .carousel_medium_1 img, .carousel_medium_2 img{
+        height: 50vh;
+    } 
+}
+
+@media (max-width:1190px) {
+    .carousel_section_carousels{
+        height: 85vh;
+    }
+
+    .carousel_medium_2 {
+        padding-right: 3vh;
+    }
+
+    .carousel_large img{
+        background-size: contain;
+    }
+}
+
+.carousel_large img{
+  height: 100vh;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.carousel-caption {
+    position: absolute;
+    bottom: 0rem;
+    left: 4vw;
+    z-index: 10; 
+}
+
+.carousel-caption .section_title, .carousel-caption .section_title_italic, .carousel-caption .view_more_container{
+    color: var(--white-beige);
+}
+
+.carousel_medium_1 img, .carousel_medium_2 img{
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+} 
+
+.carousel_medium_1 .carousel-item p, .carousel_medium_1 .carousel-item i,
+.workshops_courses p, .workshops_courses  i{
+    color: var(--medium-dark-green);   
+}
+
+.carousel_medium_1 .carousel-item,
+.carousel_medium_2 .carousel-item {
+    max-height: 0;                  
+    opacity: 0;                     
+    visibility: hidden;             
+    transition: all 2s ease-in;   
+    width: 38.28vh;
+    color: var(--dark-green);
+} 
+
+.carousel_medium_1 .carousel-item.active,
+.carousel_medium_2 .carousel-item.active {
+    max-height: 80vh;             
+    opacity: 1;                     
+    visibility: visible;            
+}  
+
+
+/* ! FOR EVERY SECTION START*/
+.section_title_italic ,.section_title{
+    font-size: 7vh;
+    font-family: var(--straight_curvy_font);
+    color: var(--dark-green);
+}
+
+.section_title_italic{
+    font-family: var(--italic_curvy_font);
+}
+
+.view_more_container{
+    font-size: 2.2vh;
+    font-family: "Edu AU VIC WA NT Pre", serif;
+    color: var(--dark-green);
+}
+
+.view_icon{
+    position: absolute;
+    left: 13.2vh;
+    transition: left 0.5s ease;
+}
+
+.view_more_container:hover .view_icon {
+    left: 15.4vh; /* Adjust the value for how far the icon moves */
+}
+/* ! FOR EVERY SECTION   START*/
+/* ? CAROUSEL SECTION END */
+
+
+
+/* ? WORKSHOP/COURSES SECTION START */
+.workshops_courses .moving_img{
+    width: 42.5vh;
+    height: 43vh;
+}
+
+.workshops_courses .workshop_1{
+    background-image: url(../img/shop-img-5.jpg);
+}
+.workshops_courses .workshop_2{
+    background-image: url(../img/shop-img-1.jpg);
+}
+.workshops_courses .workshop_3{
+    background-image: url(../img/shop-img-2.jpg);
+}
+.workshops_courses .workshop_4{
+    background-image: url(../img/shop-img-3.jpg);
+}
+
+.workshops_courses_section .section_title{
+    margin-top: 12vh;
+    margin-bottom: 7vh;
+}
+
+
+/* ! FOR EVERY SECTION START*/
+.popular_button{
+    letter-spacing:0.3vh; 
+    font-size:1.5vh; 
+    color: var(--beige); 
+    background-color: var(--light-green);
+}
+/* ! FOR EVERY SECTION END*/
+/* ? WORKSHOP/COURSES SECTION END */
+
+
+
+/* ? AVAILBALE COURSES SECTION START */
+.available_courses_section{
+    background-color: #e5ece5de;
+}
+
+.available_courses_section .section_title{
+    font-size: 5vh;
+    width: 60%;
+    margin-left: 8vh; 
+    margin-top: 9vh; 
+}
+
+.available_courses_section .view_more_container{
+    margin-left: 8vh;
+}
+
+.available_courses_card{
+    background-image: url(../img/h1-img-paralax-new-2.jpg);
+    background-attachment: fixed;
+    background-size: contain;
+    height: 100vh;
+    color: var(--medium-dark-green);
+}
+
+.available_courses_card  .moving_img{
+    background-image: url(../img/h1-banner-1.jpg);  
+    width: 33.5vh;
+    height: 50vh;
+}
+
+.available_courses_card #img_title{
+    letter-spacing: 0.4vh;
+}
+/* ? AVAILBALE COURSES SECTION END */
+
+
+
+/* ?  MATERIALS SECTION START */
+.materials_section .moving_img{
+    height: 60vh;
+    width: 40vh;
+    background-size: contain;   
+}
+
+.materials_section .popular_button{
+    color: var(--dark-green); 
+    background-color: #fff;
+    font-size: 1.5vh;
+}
+
+.materials_section {
+    font-family: var(--straight_curvy_font);
+    color: var(--dark-green);
+}
+
+.materials #img_title,
+.good_base .col-lg-4 #img_title,
+ .blog_news #img_title{
+    font-size: 3vh;
+    letter-spacing: 0.2vh;
+    font-family: var(--straight_curvy_font);
+}
+
+.materials_section .materials_text_col #img_title{
+    font-size: 1.5vh;
+}
+
+.material_1{
+    background-image: url(../img/product-category-img-1.jpg);
+}
+.material_2{
+    background-image: url(../img/product-category-img-2.jpg);
+}
+.material_3{
+    background-image: url(../img/product-category-img-3.jpg);
+}
+.material_4{
+    background-image: url(../img/product-category-img-4.jpg);
+}
+/* ?  MATERIALS SECTION END */
+
+
+/* ?  carousel_row SECTION END */
+.options .moving_img{
+    height: 27vh;
+    width: 20vh;
+}
+.carousel_img_1{
+    background-image: url(../img/h1-img-3.jpg);
+}
+.carousel_img_2{
+    background-image: url(../img/h1-product-img-2-list_11zon-test.png);
+}
+.carousel_img_3{
+    background-image: url(../img/h1-img-9.jpg);
+}
+.carousel_img_4{
+    background-image: url(../img/h1-product-img-1-list.jpg);
+}
+.carousel_img_5{
+    background-image: url(../img/h1-product-slider-new-img.jpg);
+}
+
+.carousel_row_section .price {
+  display: block; 
+}
+
+.carousel_row_section .add-to-cart {
+  display: none;
+  position: relative;
+}
+
+.carousel_row_section .options:hover .price {
+  display: none; 
+}
+
+.carousel_row_section .options:hover .add-to-cart {
+  display: inline-block; 
+}
+
+.carousel_row_section .add-to-cart::before {
+  content: "";
+  position: absolute;
+  bottom: -2px; 
+  height: 1px; 
+  width: 0;
+  background-color: var(--dark-green);
+  transition: all 0.3s ease-in-out; 
+}
+
+.carousel_row_section .options:hover .add-to-cart::before {
+  width: 100%;
+}
+
+.carousel_row_section .carousel-item{
+    width: 20%;
+    height: 60vh;
+}
+
+.carousel_row_section i{
+    color: var(--dark-green);
+    font-weight: 600;
+    font-family: var(--italic_curvy_font);
+}
+
+.carousel_row_section .materials{
+    font-family: var(--straight_strict_font);
+    font-size: 1.5vh;
+    letter-spacing: 0.4vh;
+    color: var(--medium-dark-green);
+}
+
+.carousel_row_section #img_title{
+    letter-spacing: 0.3vh;
+}
+
+.vase{
+    background-color: #e5ece5de;
+}
+
+.pot{
+    background-color: var(--beige);
+}
+/* ?  carousel_row SECTION END */
+
+
+
+/* ? stonamade_process section START */
+@media (max-width: 770px){
+    #stonemade_process .section_title, #stonemade_process .section_title_italic{
+        font-size: 6vh;
+    }
+}
+/* ? stonamade_process section END */
+
+
+
+/* ?  blog_news SECTION START */
+.blog_news{
+    background-image: url(../img/h1-blog-paralax.jpg);
+    background-attachment: fixed;
+}
+
+.blog_news .moving_img{
+    width: 99%;
+
+}
+
+.blog_news .section_title, .blog_news .section_title_italic{
+    color: var(--white-beige);
+}
+
+.img_text{
+    color: var(--medium-dark-green);
+    font-size: 2.3vh;
+    font-weight: 400;
+} 
+
+.blog_1{
+    background-image: url(../img/main-home-blog-1.jpg);
+}
+.blog_2{
+    background-image: url(../img/main-home-blog-2.jpg);
+}
+.blog_3{
+    background-image: url(../img/main-home-blog-3.jpg);
+}
+
+.blog_news .popular_button{
+    background-color: var(--dark-green);
+    color: var(--white);
+}
+/* ?  blog_news SECTION END */
+
+
+
+/* ?  good_base SECTION START */
+@media (max-width:990px){
+    .good_base_text{
+        padding: 0 4vh 0 15vh;
+    }
+}
+
+.good_base .moving_img{
+    width:46vh;
+    height: 60vh;
+}
+
+.good_base .view_more_container{
+    font-family: var(--italic_curvy_font);
+    color: var(--medium-dark-green);
+    font-weight: 600;
+}
+
+.good_base .view_icon{
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease-in;
+}
+
+.good_base .view_more_container:hover .view_icon{
+    opacity: 1;
+    visibility: visible;
+}
+
+.good_base .view_icon_1{
+    left: 25vh;
+}
+.good_base .view_more_container:hover .view_icon_1 {
+    left: 26vh; 
+}
+
+.good_base .view_icon_2{
+    left: 27vh;
+}
+.good_base .view_more_container:hover .view_icon_2{
+    left: 28vh; 
+}
+
+.good_base .view_icon_3{
+    left: 16vh;
+}
+.good_base .view_more_container:hover .view_icon_3 {
+    left: 17vh; 
+}
+
+.good_base .view_icon_4{
+    left: 25vh;
+}
+.good_base .view_more_container:hover .view_icon_4{
+    left: 26vh; 
+}
+
+.good_base .view_icon_5{
+    left: 27vh;
+}
+.good_base .view_more_container:hover .view_icon_5{
+    left: 28vh; 
+}
+
+.good_base .product_1{
+    background-image: url(../img/h1-workshop-list-img.jpg);
+}
+.good_base .product_2{
+    background-image: url(../img/h1-workshop-list-img-2.jpg);
+}
+/* ?  good_base SECTION END */
+
+
+
+/* ?  wheel_course SECTION START */
+.wheel_course_section{
+    background-color: #e5ece5de;
+}
+@media (max-width:990px){
+    .wheel_small_image{
+        width: 60vh;
+    }
+}
+.wheel_text{
+    width: 45%;
+}
+
+.wheel_small_image{
+    background-image: url(../img/h1-img-7.jpg);
+    width: 35vh;
+    height: 50vh;
+    margin-bottom: 13vh;
+}
+
+.wheel_course_section .wheel_img_col{
+    background-image: url(../img/h1-img-paralax-new.jpg);
+    background-size: contain;
+    background-attachment: fixed;
+}
+/* ?  wheel_course SECTION END */
+
+
+
+/* ?  process SECTION START */
+.process_section #img_title{
+    letter-spacing: 0.4vh;
+}
+
+.video{
+    background-image: url(../img/h1-video-img-1-1024x377.jpg);
+    width: 78%;
+    height: 45vh;
+}
+
+.video img{
+    border-radius: 50%;
+    padding: 2vh;
+    border: 1px solid var(--beige);
+    transition: all 0.3s ease-in-out;
+}
+
+.video:hover img{
+    padding: 4vh;
+}
+/* ?  process SECTION END */
+
+
+
+/* ?  pottery_love SECTION START */
+.pottery_love_section .col-lg{
+    height: 28vh;
+}
+
+@media (max-width:1200px){
+    .pottery_love_section .col-lg{
+        width: 35vw;
+    }
+}
+
+.pottery_love_section .pottery_1{
+    background-image:url(../img/h1-img-gallery-1.jpg);
+}
+.pottery_love_section .pottery_2{
+    background-image:url(../img/h1-img-gallery-2.jpg);
+}
+.pottery_love_section .pottery_3{
+    background-image:url(../img/h1-img-gallery-3.jpg);
+}
+.pottery_love_section .pottery_4{
+    background-image:url(../img/h1-img-gallery-4.jpg);
+}
+.pottery_love_section .pottery_5{
+    background-image:url(../img/h1-img-gallery-5.jpg);
+}
+.pottery_love_section .pottery_6{
+    background-image:url(../img/h1-img-gallery-6.jpg);
+}
+/* ?  pottery_love SECTION END */
+
+
+
+/* ?  footer SECTION START */
+footer{
+    background-color: var(--beige);
+}
+
+footer p{
+    color: var(--medium-dark-green);
+}
+
+.email-box {
+    border: 0.21vh solid var(--medium-dark-green);
+    background-color: var(--beige);
+    margin-bottom: 15vh;
+    margin-right: 20vh;
+    width: 35vh;
+}
+
+.email-box img{
+    margin-left: -7vh;
+}
+
+.email-box input {
+    border: none;
+    outline: none;
+    background-color: var(--beige); 
+}
+
+.footer_border_hover a{
+    color: var(--medium-dark-green);
+}
+
+.footer_a_hover::before, .footer_border_hover a::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 0.1vh;
+    width: 0;
+    background-color: var(--dark-green);
+    transition: all 0.3s ease-in-out;
+}
+
+.footer_a_hover:hover::before{
+    width: 100%;
+}
+
+.footer_border_hover a:hover::before{
+    width: 10vh;
+}
+
+.trending_follow .footer_border_hover a:hover::before{
+    width: 14vh;
+}
+/* ?  footer SECTION END */
+
+
+/* ? TOAST START */
+@media (min-width:1020px){
+    .toast{
+        width: 100vh;
+    }
+
+    .toast-container{
+        bottom: 2vh;
+        right: 2vh;
+    }
+}
+
+@media (max-width:1020px){
+    .toast{
+        width: 50vh;
+    }
+
+    .toast-container{
+        left: 50%;
+        transform: translate(-50%,0);
+    } 
+}
+
+.toast{
+    background-color: #e1e6e1e8;
+    color: var(--dark-green);
+}
+
+.toast input{
+    background-color: #e1e6e1e8;
+    border: 0.1vh solid var(--dark-green);
+}
+
+.toast button{
+    background-color: var(--dark-green);
+    color: var(--white);
+    font-family: var(--italic_curvy_font);
+    border: none;
+    position: relative;
+}
+
+.toast button span::before{
+    content: "";
+    position: absolute;
+    bottom: 2vh;
+    left: 40%;
+    height: 0.1vh;
+    width: 0;
+    background-color: var(--white);
+    transition: all 0.3s ease-in-out;
+}
+
+.toast button span:hover::before{
+    width: 20%;
+}
+
+.img_pop_column{
+    background-image: url(../img/popup-img-2.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.toast_title{
+    font-size: 4vh; 
+    font-family: var(--italic_curvy_font); 
+    font-weight:500;
+}
+/* ? TOAST END */
+
+
+.top-button {
+    position: fixed;
+    bottom: 3vh;
+    right: 3vh;
+    background-color: var(--medium-dark-green);
+    color: var(--white);
+    font-family: var(--italic_curvy_font);
+    border: none;
+    padding: 1.5vh 1.5vh;
+    cursor: pointer;
+    display: none; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}

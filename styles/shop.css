@@ -1,0 +1,112 @@
+body, a{
+    color: var(--medium-dark-green);
+}
+
+.cart{
+    font-family: var(--italic_curvy_font);
+}
+
+#container_92{
+    width: 92%;
+}
+
+.section_title{
+    font-size: 5vh;
+    font-weight: 400;
+}
+
+@media (max-width:1200px){
+    .moving_img{
+        width: 35vh;
+    }
+    
+}
+
+.moving_img{
+    width: 46vh;
+    height: 47vh;
+}
+
+.workshop_1{
+    background-image: url(../img/shop-img-1.jpg);
+}
+.workshop_2{
+    background-image: url(../img/shop-img-2.jpg);
+}
+.workshop_3{
+    background-image: url(../img/shop-img-3.jpg);
+}
+.workshop_4{
+    background-image: url(../img/shop-img-4.jpg);
+}
+.workshop_5{
+    background-image: url(../img/shop-img-5.jpg);
+}
+.workshop_6{
+    background-image: url(../img/shop-img-6.jpg);
+}
+.workshop_7{
+    background-image: url(../img/shop-img-7.jpg);
+}
+.workshop_8{
+    background-image: url(../img/shop-img-8.jpg);
+}
+.workshop_9{
+    background-image: url(../img/shop-img-9.jpg);
+}
+
+.categories a{
+    font-family: var(--italic_curvy_font);
+    position: relative;
+}
+
+.categories a::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 0.1vh;
+    background-color: var(--dark-green);
+    transition: all 0.3s ease-in-out;
+}
+
+.categories a:hover::before{
+    width: 55%;
+}
+
+#img_title{
+    letter-spacing: 0.4vh;
+}
+
+.related .moving_img{
+    width: 9vh;
+    height: 9.3vh;
+}
+
+.related_1{
+    background-image: url(../img/shop-img-3-150x150.jpg);
+}
+.related_2{
+    background-image: url(../img/shop-img-2-150x150.jpg);
+}
+.related_3{
+    background-image: url(../img/shop-img-1-150x150.jpg);
+}
+
+.tags a{
+    background-color: #e4e4e4;
+}
+
+.tags a:hover{
+    background-color: #d4d4d4;
+
+}
+
+.pages{
+    list-style: none;
+}
+
+.pages_row{
+    margin: 5vh 0 15vh 0 ;
+}

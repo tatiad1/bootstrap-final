@@ -1,0 +1,87 @@
+body{
+    background-color: var(--beige);
+}
+
+.navbar {
+    position: absolute; 
+    background-color: transparent;
+}
+
+#img_title{
+    font-size: 8vh;
+    font-family: var(--italic_curvy_font);
+}
+
+@media (min-width:1190px){
+    .coming_soon{
+        padding-left: 13vh ;
+    }
+
+    .img_column{
+        width: 50%;
+    }
+}
+
+@media (max-width:1190px){
+    .coming_soon{
+        padding-left: 10vh ;
+    }
+}
+
+@media (max-width:500px){
+    .coming_soon{
+        padding-left: 2vh ;
+    }
+}
+
+.img_column{
+    background-image: url(../img/comingsoon-new.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+}
+
+.coming_soon{
+    height: 100vh;
+}
+
+.section_title{
+    font-size: 8vh;
+    padding-top: 23vh;
+}
+
+.time_type{
+    font-size: 1.7vh;
+    color: var(--medium-dark-green);
+    letter-spacing: 0.2vh;
+    font-weight: 500;
+}
+
+.workshops_navbar{
+    color: var(--beige);
+    border-bottom: 1px solid var(--beige); 
+
+}
+
+.submit_button  span{
+    background-color: var(--dark-green);
+    color: var(--white);
+    font-family: var(--italic_curvy_font);
+    border: none;
+    position: relative;
+}
+
+.submit_button span::before{
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0.1vh;
+    background-color: var(--white);
+    left: 15%;
+    bottom: 1.5vh;
+    transition: width 0.3s ease;
+}
+
+.submit_button span:hover::before{
+    width: 70%;
+}

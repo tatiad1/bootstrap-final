@@ -1,0 +1,76 @@
+.navbar {
+    position: absolute; 
+    background-color: transparent;
+}
+
+body{
+    background-color: #f8f5f4;
+}
+
+@media (min-width:1190px){
+    .member{
+        background-image: url(../img/aboutme-img-1.jpg);
+        background-size: cover;
+        background-position: center;
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100%;
+    }
+
+    footer{
+        width: 50%;
+    }   
+
+    .member_info{
+        padding: 0vh 0 20vh 9vh;
+        color: var(--medium-dark-green);
+    }
+}
+
+.section_title{
+    width: 30vh;
+    padding-top: 30vh;
+}
+
+.awards_as_seen_in{
+    line-height: 2vh;
+}
+
+.img_text{
+    font-size: 1.5vh;
+    font-weight: 500;
+    letter-spacing: 0.5vh;
+}
+
+.member_info{
+    padding-left: 10vh;
+    padding-right: 15vh;
+}
+
+footer .container{
+    padding-left: 10vh;
+}
+
+.border_hover p{
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.border_hover p::before{
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0.1vh;
+    background-color: var(--medium-dark-green);
+    left: 0;
+    bottom: 0;
+    transition: width 0.3s ease;
+}
+
+.border_hover p:hover::before{
+    width: 90%;
+}
+
+
+

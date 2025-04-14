@@ -1,0 +1,74 @@
+.navbar {
+    position: absolute; 
+    background-color: transparent;
+}
+
+@media (max-width:1190px){
+    .navbar {
+        background-color: var(--white);
+    }
+}
+
+.title_row{
+    background-image: url(../img/pricing-plans-img2.jpg);
+    background-position: center;
+    background-image: cover;
+    padding:23vh 0 13vh 0 ;
+}
+
+.img_text{
+    color: var(--medium-dark-green);
+}
+
+#img_title{
+    letter-spacing: 0.3vh;
+}
+
+.offer_row{
+    padding: 20vh 0;
+}
+
+.offer{
+    background-color: #fbf8f6;
+    color: var(--medium-dark-green);
+}
+
+.offer_bg{
+    background-color: #dde3e9;
+}
+
+.price{
+    font-family: var(--italic_curvy_font);
+}
+
+.purchase{
+    background-color: var(--dark-green);
+    color: var(--white);
+    font-family: var(--italic_curvy_font);
+    width: 17vh;
+    position: relative;
+}
+
+.purchase::before{
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0.1vh;
+    background-color: var(--white);
+    left:3vh;
+    bottom: 1vh;
+    transition: width 0.3s ease;
+    
+}
+
+.purchase:hover::before{
+    width: 70%;
+}
+
+
+
+
+
+
+
+

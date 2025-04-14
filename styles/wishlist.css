@@ -1,0 +1,22 @@
+section{
+    background-image: url(../img/wishlist-img-new.jpg);
+    background-size: cover;
+    background-position: center;
+    color: var(--medium-dark-green);
+    padding: 23vh 0vh 12vh 10vh;
+
+}
+
+.navbar {
+    position: absolute; 
+    background-color: transparent;
+}
+
+.section_title{
+    font-size: 8vh;
+}
+
+.no_items{
+    height: 40vh;
+    color: var(--medium-dark-green);
+}

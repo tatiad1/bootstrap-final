@@ -1,0 +1,43 @@
+body{
+    background-image: url(../img/404-bcgr-nw.jpg);
+    background-size: cover;
+    height: 100vh;
+    background-position: center;
+    color: var(--medium-dark-green);
+}
+
+section{
+    padding-top: 40vh;
+}
+
+.section_title, .section_title_italic{
+    font-size: 8vh;
+}
+
+.navbar {
+    position: absolute; 
+    background-color: transparent;
+}
+
+.back_to  span{
+    background-color: var(--dark-green);
+    color: var(--white);
+    font-family: var(--italic_curvy_font);
+    border: none;
+    position: relative;
+}
+
+.back_to span::before{
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0.1vh;
+    background-color: var(--white);
+    left: 15%;
+    bottom: 1.5vh;
+    transition: width 0.3s ease;
+}
+
+.back_to span:hover::before{
+    width: 70%;
+}

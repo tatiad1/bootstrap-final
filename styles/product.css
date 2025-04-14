@@ -1,0 +1,234 @@
+
+/* ?Product_section START */
+.product_section .main_img{
+    background-image: url(../img/shop-img-5.jpg);
+    background-size: cover;
+    background-position: center bottom;
+    width: 100%;
+    height: 100vh;
+}
+
+.product_section .mini_img_1, .mini_img_2, .mini_img_3{
+    width: 10vh;
+    height: 15vh;
+}
+.mini_img_1{
+    background-image: url(../img/shop-course-img-gallery-1.jpg);
+    margin-top: 17vh;
+}
+.mini_img_2{
+    background-image: url(../img/shop-course-img-gallery-2.jpg);
+}
+.mini_img_3{
+    background-image: url(../img/shop-course-img-gallery-3.jpg);
+}
+
+.product_section{
+    color: var(--medium-dark-green);
+}
+
+.product_section .section_title{
+    font-family: var(--straight_curvy_font);
+    font-size: 9vh;
+}
+
+.product_section .section_title_italic{
+    font-size: 4vh;
+
+}
+
+.product_texts{
+    margin-left: 10vh;
+}
+
+
+
+
+
+.buttons .add-to-cart{
+    background-color: var(--dark-green);
+    color: var(--white);
+    font-family: var(--italic_curvy_font);
+}
+
+.buttons .add-to-cart::before{
+    position: absolute;
+    content: "";
+    left: 20%;
+    bottom: 1.1vh;
+    width: 0;
+    background-color: var(--white);
+    height: 0.1vh;
+    transition: all 0.3s ease-in-out;
+}
+
+.buttons .add-to-cart:hover::before{
+    width: 60%;
+}
+
+.buttons .amount{
+    border: 0.1vh solid var(--dark-green);
+}
+
+
+.calendar_icon::after{
+    position: absolute;
+    content: "26. January";
+    left: 4vh;
+    color: var(--medium-dark-green);
+}
+
+.star_icons::after{
+    position: absolute;
+    content: "(1 customer review)";
+    left: 15vh;
+    bottom: -0.3vh;
+    color: var(--medium-dark-green);
+}
+
+.heart_icon::after{
+    position: absolute;
+    content: "Add to wishlist";
+    left: 5vh;
+    bottom: 0.4vh;
+    color: var(--medium-dark-green);
+}
+
+.properties #img_title{
+    letter-spacing: 0.4vh;
+}
+/* ?Product_section END */
+
+
+
+/* ? description_section START */
+.description_section .text_row{
+    color: var(--dark-green);
+}
+
+@media (max-width:800px) {
+    .description_section #img_title{
+        font-size: 1.9vh;
+        letter-spacing: 0.15vh;
+    }
+}
+
+.description_section #img_title{
+    color: var(--light-green);
+    transition: all 0.3s ease-in-out;
+}
+
+.description_section #img_title:hover{
+    color: var(--dark-green);
+}
+
+/* ? description_section END */
+
+
+/* ? video START */
+
+.video{
+    background-image: url(../img/shop-course-img-video-1-2048x730.jpg);
+    height: 70vh;
+    background-size: cover;
+    background-position: center;
+}
+
+.video img{
+    border-radius: 50%;
+    padding: 7vh;
+    border: 1px solid var(--beige);
+    transition: all 0.3s ease-in-out;
+}
+
+.video:hover img{
+    padding: 8vh;
+}
+/* ? video END */
+
+
+
+
+/*? SCHEDULE START */
+.schedule_1, .schedule_2, .schedule_3,.schedule_4{
+    height: 54vh;
+    background-size: cover;
+    background-position: center;
+}
+
+.schedule_1{
+    background-image: url(../img/shop-course-img-banner-1.jpg);
+}
+.schedule_2{
+    background-image: url(../img/shop-course-img-banner-2.jpg);
+}
+.schedule_3{
+    background-image: url(../img/shop-course-img-banner-3.jpg);
+}
+.schedule_4{
+    background-image: url(../img/shop-course-img-banner-4.jpg);
+}
+/*? SCHEDULE END */
+
+
+/*? two_pic START */
+
+@media (max-width:750px){
+    .workshops_courses_section .section_title, .workshops_courses_section .section_title_italic{
+        font-size: 4.8vh;
+    }
+
+    .two_pic .pic_1, .two_pic .pic_2{
+        height: 40vh;
+
+    }
+}
+
+.two_pic .pic_1, .two_pic .pic_2{
+    background-size: cover;
+    background-position: center;
+}
+
+.two_pic .pic_1{
+    background-image: url(../img/shop-course-img-content-2.jpg);
+}
+.two_pic .pic_2{
+    background-image: url(../img/shop-course-img-content-1.jpg);
+}
+
+@media (min-width:750px){
+    .two_pic .pic_1, .two_pic .pic_2{
+        height: 80vh;
+    }    
+}
+/*? two_pic END */
+
+
+
+/*? WORKSHOP START */
+
+.workshop_1{
+    background-image: url(../img/shop-img-2-768x768.jpg);
+}
+.workshop_2{
+    background-image: url(../img/h1-workshop-img-2-768x768.jpg);
+}
+.workshop_3{
+    background-image: url(../img/shop-img-3-768x768.jpg);
+}
+.workshop_4{
+    background-image: url(../img/h1-product-3-650x650.jpg);
+}
+
+.workshops_courses_section .moving_img{
+    height: 42vh;
+}
+
+.add_to_cart::after{
+    height: 0.02vh;
+}
+
+.workshops p, .workshops i{
+    color: var(--dark-green);
+}
+/*? WORKSHOP END */
